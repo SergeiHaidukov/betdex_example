@@ -1,3 +1,4 @@
 /node_modules/
 .idea
 /mnemonic.ts
+/get_balances.ts

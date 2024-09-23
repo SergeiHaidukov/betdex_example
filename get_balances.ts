@@ -2,6 +2,7 @@ import { getWalletTokenBalancesWithSol } from "@monaco-protocol/client";
 import { PublicKey } from "@solana/web3.js";
 import { getProgram, getProcessArgs, logResponse } from "./utils";
 import * as bip39 from "bip39";
+import {mnemonic} from "./mnemonic"
 const solanaWeb3 = require('@solana/web3.js');
 
 async function getBalances(tokenMints: PublicKey[]) {
@@ -11,12 +12,10 @@ async function getBalances(tokenMints: PublicKey[]) {
 }
 
 const exampleTokens = [
-    new PublicKey("Qegj89Mzpx4foJJqkj6B4551aiGrgaV33Dtcm7WZ9kf"),
-    new PublicKey("Aqw6KyChFm2jwAFND3K29QjUcKZ3Pk72ePe5oMxomwMH")
+    // new PublicKey("Qegj89Mzpx4foJJqkj6B4551aiGrgaV33Dtcm7WZ9kf"),
+    // new PublicKey("Aqw6KyChFm2jwAFND3K29QjUcKZ3Pk72ePe5oMxomwMH")
 ];
 
-const mnemonic =
-    "fly tenant need fiscal gold can assault indoor silent miss rate napkin";
 const seed = bip39.mnemonicToSeedSync(mnemonic, ""); // (mnemonic, password)
 const keypair = solanaWeb3.Keypair.fromSeed(seed.subarray(0, 32));
 
